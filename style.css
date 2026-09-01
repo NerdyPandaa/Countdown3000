@@ -1,0 +1,138 @@
+body {
+    background-color: black;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-top: 15%;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+.hashtag {
+    font-family: Georgia, serif;
+    color: rgb(111, 192, 244);
+}
+
+.value {
+    color: rgb(234, 123, 49);
+    font-size: 50px;
+    font-family: fantasy;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    font-size: 20px;
+    color: #6fc0f4 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+}
+
+:root {
+    --background-color: #000000;
+    --primary-color: #ea7b31;
+    --secondary-color: #6fc0f4;
+    --text-color: #ffffff;
+    --hashtag-font-size: 30px;
+    --countdown-font-size: 180px;
+    --label-font-size: 16px;
+    --time-unit-gap: 20px;
+    --value-label-gap: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    overflow: auto;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 100vw;
+    width: 100%;
+}
+
+.hashtag {
+    font-size: var(--hashtag-font-size);
+    color: #6fc0f4 !important;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.countdown {
+    display: flex;
+    gap: var(--time-unit-gap);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--value-label-gap);
+}
+
+.value {
+    font-size: var(--countdown-font-size);
+    font-weight: bold;
+    color: #ea7b31 !important;
+    min-width: calc(var(--countdown-font-size) * 1.5);
+    text-align: center;
+    line-height: 1;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.label {
+    font-size: var(--label-font-size);
+    color: #6fc0f4 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --label-font-size: 12px;
+        --time-unit-gap: 15px;
+        --hashtag-font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --label-font-size: 10px;
+        --time-unit-gap: 10px;
+        --hashtag-font-size: 10px;
+    }
+    .countdown { gap: 10px; }
+}
