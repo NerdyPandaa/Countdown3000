@@ -120,6 +120,15 @@ body {
     font-weight: 300;
 }
 
+.custom-line {
+    border: none;
+    height: 4px;
+    border-radius: 50px;
+    background-color: #fc7c7c;
+    margin: 20px 0;
+    width: 95%;
+}
+
 @media (max-width: 768px) {
     :root {
         --label-font-size: 12px;
