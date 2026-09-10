@@ -7,7 +7,7 @@ function formatWithSpaces(numberString) {
 }
 
 function updateCountdownFormatted() {
-    const targetDate = new Date('2026-09-10T08:00:00');
+    const targetDate = new Date('2026-09-11T08:46:00');
     const now = new Date();
     let difference = targetDate - now;
 
