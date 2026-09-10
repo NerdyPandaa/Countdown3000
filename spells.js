@@ -11,28 +11,32 @@ function updateCountdownFormatted() {
     const now = new Date();
     let difference = targetDate - now;
 
+
     if (difference <= 0) {
+
         document.getElementById('days').textContent = '00';
         document.getElementById('hours').textContent = '00';
         document.getElementById('minutes').textContent = '00';
         document.getElementById('seconds').textContent = '00';
         document.getElementById('pureseconds').textContent = '00';
+    
+    } else {
+
+        const totalSeconds = Math.floor(difference / 1000);
+        const totalMinutes = Math.floor(totalSeconds / 60);
+        const totalHours = Math.floor(totalMinutes / 60);
+        const totalDays = Math.floor(totalHours / 24);
+        const hours = totalHours % 24;
+        const minutes = totalMinutes % 60;
+        const seconds = totalSeconds % 60;
+
+        document.getElementById('days').textContent = padNumber(totalDays);
+        document.getElementById('hours').textContent = padNumber(hours);
+        document.getElementById('minutes').textContent = padNumber(minutes);
+        document.getElementById('seconds').textContent = padNumber(seconds);
+        document.getElementById('pureseconds').textContent = formatWithSpaces(padNumber(totalSeconds));
+
     }
-
-    const totalSeconds = Math.floor(difference / 1000);
-    const totalMinutes = Math.floor(totalSeconds / 60);
-    const totalHours = Math.floor(totalMinutes / 60);
-    const totalDays = Math.floor(totalHours / 24);
-    const hours = totalHours % 24;
-    const minutes = totalMinutes % 60;
-    const seconds = totalSeconds % 60;
-
-    document.getElementById('days').textContent = padNumber(totalDays);
-    document.getElementById('hours').textContent = padNumber(hours);
-    document.getElementById('minutes').textContent = padNumber(minutes);
-    document.getElementById('seconds').textContent = padNumber(seconds);
-
-    document.getElementById('pureseconds').textContent = formatWithSpaces(padNumber(totalSeconds));
 }
 
 let previousValues = {days: 0, hours: 0, minutes: 0, seconds: 0, pureseconds: 0};
